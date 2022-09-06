@@ -1,10 +1,14 @@
 import serverless from "serverless-http";
-import express, { Express, NextFunction, Request, Response } from "express";
+import express, { Express, json, NextFunction, Request, Response } from "express";
 import { CatsController } from "./src/cats/cats.controller";
 import { CatModel } from "./src/config/db";
 import { BodyValidateMiddleware } from "./middleware/body-validator.middleware";
 import { ErrorMiddleware } from "./middleware";
+import { CreateCatDto } from "./src/cats/dto/create-cat.dto";
 const app: Express = express();
+
+app.use(json())
+
 const BASE_URL = "/cats";
 const catsController = new CatsController(CatModel);
 
@@ -18,7 +22,7 @@ app.get(BASE_URL, catsController.find);
 // GET : /cats/{id}
 app.get(BASE_URL + "/:id", catsController.findById);
 // POST : /cats
-app.post(BASE_URL, BodyValidateMiddleware({}), catsController.create);
+app.post(BASE_URL, BodyValidateMiddleware(CreateCatDto), catsController.create);
 // PUT : /cats/{id}
 app.put(BASE_URL + "/:id", catsController.updateById);
 // DELETE : /cats/{id}
