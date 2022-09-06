@@ -1,6 +1,0 @@
-{
-  "MONGODB_URL": "localhost:27017/roof-quotation?retryWrites=false&w=majority&tls=true",
-  "MONGODB_USER": "mgdbmaster",
-  "MONGODB_PASSWORD": "e-5p2x6b=Q5r",
-  "DB_NAME": "test"
-}
