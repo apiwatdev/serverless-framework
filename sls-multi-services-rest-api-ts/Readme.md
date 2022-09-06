@@ -1,0 +1,1 @@
+## serverless framework multiple services project structure + rest api (ts) + mongodb

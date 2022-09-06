@@ -1,0 +1,18 @@
+
+# services:
+#   service-cats:
+#     path: service-cats
+
+#   service-owners: 
+#     path: service-owners
+
+# serverless-compose.yml
+services:
+  service-a:
+    path: service-a
+  service-cats:
+    path: service-cats
+  # service-b:
+  #   path: service-b
+    # If the file is not named "serverless.yml":
+    # config: serverless.api.yml
