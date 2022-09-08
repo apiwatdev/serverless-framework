@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "aws-sdk": "^2.1210.0",
+    "dotenv": "^16.0.2"
+  },
+  "scripts": {
+    "deploy:pre-generate-token": "serverless deploy function --function pre-generate-token",
+    "test:pre-signup": "serverless invoke local --function pre-signup --path example-event/pre-signup.example.json",
+    "test:pre-generate-token": "serverless invoke local --function pre-generate-token --path example-event/pre-generate-token.example.json",
+    "call:sign-in": "node ./calls-api-operations/initiateAuth"
+  }
+}
+
+

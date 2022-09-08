@@ -1,0 +1,26 @@
+service: simple-congito-events
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: ap-southeast-1
+
+functions:
+  pre-signup:
+    handler: pre-signup.run
+    events:
+      - cognitoUserPool:
+          pool: demo-trigger-lambda
+          # pool: ${file(./config.${opt:stage, 'dev'}.json):USER_POOL_ID}
+          trigger: PreSignUp
+          existing: true
+  pre-generate-token:
+    handler: pre-generate-token.run
+    events:
+      - cognitoUserPool:
+          pool: demo-trigger-lambda
+          # pool: ${file(./config.${opt:stage, 'dev'}.json):USER_POOL_ID}
+          trigger: PreTokenGeneration
+          existing: true

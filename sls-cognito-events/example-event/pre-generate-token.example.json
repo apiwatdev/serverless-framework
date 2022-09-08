@@ -1,0 +1,27 @@
+{
+  "version": "1",
+  "triggerSource": "TokenGeneration_Authentication",
+  "region": "ap-southeast-1",
+  "userPoolId": "ap-southeast-1_Fwe6JtxEe",
+  "userName": "first_user",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-nodejs-2.1210.0",
+    "clientId": "7cbo7q8gpbavpp1k2l4lmhmagg"
+  },
+  "request": {
+    "userAttributes": {
+      "sub": "1b1f96a3-a97a-4abc-8d8d-7713067077a4",
+      "cognito:user_status": "CONFIRMED",
+      "email_verified": "true",
+      "phone_number_verified": "true",
+      "phone_number": "+66XXXXXX",
+      "email": "it.XXXXX@gmail.com"
+    },
+    "groupConfiguration": {
+      "groupsToOverride": [],
+      "iamRolesToOverride": [],
+      "preferredRole": null
+    }
+  },
+  "response": { "claimsOverrideDetails": null }
+}
