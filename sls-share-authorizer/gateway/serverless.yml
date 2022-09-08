@@ -1,0 +1,27 @@
+service: my-api-gateway
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: ap-southeast-1
+
+resources:
+  Resources:
+    MyApiGW:
+      Type: AWS::ApiGateway::RestApi
+      Properties:
+        Name: MyApiGW
+  Outputs:
+    apiGatewayRestApiId:
+          Value:
+            Ref: MyApiGW
+          Export:
+            Name: MyApiGW-restApiId
+    apiGatewayRestApiRootResourceId:
+          Value:
+            Fn::GetAtt:
+              - MyApiGW
+              - RootResourceId
+          Export:
+            Name: MyApiGW-rootResourceId
